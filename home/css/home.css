@@ -85,5 +85,10 @@
     display: inline-block;
 }
 
+.room-noti{
+    display: inline-block;
+    vertical-align: top;
+}
+
 
 

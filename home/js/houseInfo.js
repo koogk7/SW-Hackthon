@@ -28,26 +28,37 @@ function loadHouseList(list=dummy) {
 
 }
 
-
 function createHouseItem(item) {
     let houseItem = document.createElement("td");
     let noise_color = document.createElement("div");
-    let room_number_box = document.createElement("div");
-    let room_number = document.createElement("div");
 
     houseItem.classList.add("house-item");
     noise_color.classList.add("noise-color");
-    room_number_box.classList.add("room-number-box");
-    room_number.classList.add("room-number");
 
-    //색 변경 작업
-    room_number.textContent = item.home_no;
-
-    room_number_box.appendChild(room_number);
+    houseItem.appendChild(createRoomBox(item));
     houseItem.appendChild(noise_color);
-    houseItem.appendChild(room_number_box);
 
     return houseItem;
 
+}
+
+function createRoomBox(item) {
+    let room_number_box = document.createElement("div");
+    let room_number = document.createElement("div");
+
+    room_number_box.classList.add("room-number-box");
+    room_number.classList.add("room-number");
+
+    //색 변경 작업 및 클릭 이벤트 달기
+    room_number.textContent = item.home_no;
+    room_number_box.appendChild(room_number);
+
+    if(item.message !== ''){
+        let room_noti = document.createElement("div");
+        room_noti.classList.add("room-noti");
+        room_noti.innerText = "v";
+        room_number_box.appendChild(room_noti);
+    }
+    return room_number_box;
 }
 

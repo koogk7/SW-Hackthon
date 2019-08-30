@@ -13,7 +13,6 @@
 .right-box {
     width: 49%;
     height: 100%;
-    background-color: black;
     display: inline-block;
 }
 
@@ -21,9 +20,19 @@
      height: 20%;
  }
 
-.circle-graph {
-    height: 80%;
-    background-color: blue;
+.main-graph {
+    height: 70%;
+    margin-bottom: 3em;
+    margin-top: 3em;
+}
+
+.msg {
+    font-size: 3em;
+    text-align: center;
+}
+
+#bar-graph {
+    background: linear-gradient(to left, #ed4264, #ffedbc);
 }
 
 .time-info {
@@ -53,6 +62,7 @@
     padding-right: 2em;
     margin-top: 2em;
     text-align: center;
+    overflow: auto;
 }
 .house-info-title {
     font-size: 2em;
@@ -61,7 +71,7 @@
 .house-item {
     margin-right: 2em;
     font-size: 2em;
-    line-height: 30%;
+    width: 10em;
 }
 .table>tbody> tr> .house-item {
     border: none;

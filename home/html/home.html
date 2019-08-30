@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="../css/home.css">
     <script type="text/javascript" src="../js/timeWeather.js"></script>
     <script type="text/javascript" src="../js/houseInfo.js"></script>
+    <script type="text/javascript" src="../js/graph.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -49,27 +51,19 @@
                             <!--</div>-->
                         <!--</td>-->
                     <!--</tr>-->
-                    <!--<tr>-->
-                        <!--<td class="house-item">-->
-                            <!--<div class="noise-color"></div>-->
-                            <!--<div class="room-number-box">-->
-                                <!--<div class="room-number">101</div>-->
-                            <!--</div>-->
-                        <!--</td>-->
-                        <!--<td class="house-item">-->
-                            <!--<div class="noise-color"></div>-->
-                            <!--<div class="room-number-box">-->
-                                <!--<div class="room-number">101</div>-->
-                            <!--</div>-->
-                        <!--</td>-->
-                    <!--</tr>-->
                 </tbody>
             </table>
         </div>
     </div>
     <div class="right-box">
-        <div class="circle-graph"></div>
-        <div class="bar-graph"></div>
+        <div class="main-graph">
+            <canvas id="circle-graph" width="400" height="400"></canvas>
+            <div class="msg">
+                <h2>배려가 넘쳐요</h2>
+                <strong>40데시벨</strong> 주간의 조용한 주택
+            </div>
+        </div>
+        <canvas id="bar-graph" style="width: 100%; height: 10%"></canvas>
     </div>
 </div>
 <script>
@@ -79,6 +73,8 @@
         getTodayWeather();
         // getTodayDust();
         loadHouseList(makeDummy());
+        loadMainChart();
+        loadSubChart();
     });
 </script>
 </body>

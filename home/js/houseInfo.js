@@ -3,10 +3,11 @@ let dummy = [];
 function makeDummy() {
     let i = 0;
     while(i < 20){
+        let msg = i % 7 === 3 ? "Test" : "";
         dummy.push({
             "id" : i,
             "home_no" : i,
-            "message" : "Test",
+            "message" : msg,
         });
         i += 1;
     }
@@ -35,8 +36,8 @@ function createHouseItem(item) {
     houseItem.classList.add("house-item");
     noise_color.classList.add("noise-color");
 
-    houseItem.appendChild(createRoomBox(item));
     houseItem.appendChild(noise_color);
+    houseItem.appendChild(createRoomBox(item));
 
     return houseItem;
 

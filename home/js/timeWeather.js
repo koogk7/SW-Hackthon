@@ -24,7 +24,7 @@ function printCurrentTime() {
     let divClock = document.querySelector('.date-time-box');
     let hour = underTenAdapter(currentDate.getHours());
     let min = underTenAdapter(currentDate.getMinutes());
-    let time_msg = hour + ":" + min;
+    let time_msg = hour + " : " + min;
 
     divClock.innerText = time_msg;
     setTimeout(printCurrentTime,10000);
@@ -52,10 +52,12 @@ function getTodayWeather() {
             return response.json();
         })
         .then(response => {
-            console.log(response);
             let weather_result = document.querySelector('.weather-result');
+            let weather_img = document.querySelector('.weather-icon');
             let weather_en = response['weather'][0]['description'];
+            let weather_icon_url = "http://openweathermap.org/img/w/" + response['weather'][0]['icon'] + ".png";
             weather_result.innerHTML = weather_kn[weather_en];
+            weather_img.setAttribute("src", weather_icon_url);
         });
 }
 

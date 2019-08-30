@@ -15,7 +15,7 @@ function makeDummy() {
 }
 
 function loadHouseList(list=dummy) {
-    let tbody = document.querySelector(".table > tbody");
+    let tbody = document.querySelector("table > tbody");
     let row = document.createElement("tr");
 
     // 리팩토링 필요

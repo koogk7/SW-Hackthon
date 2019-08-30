@@ -18,7 +18,13 @@ function loadMainChart() {
 
     let main_graph = new Chart(main_graph_canvas, {
         type: 'doughnut',
-        data: data
+        data: data,
+        options: {
+            legend: { // label 숨기기
+                display: false,
+            },
+            responsive: false, // 크기 조절
+        }
     });
 }
 
@@ -47,7 +53,7 @@ function loadSubChart() {
                 xAxes: [{ // x축 크기 조절
                     ticks: {
                         beginAtZero: true,
-                        stepSize: 10,
+                        stepSize: 150,
                         suggestedMax: 150
                     }
                 }]

@@ -18,19 +18,11 @@ var weather_kn = {
 var sido = '서울';
 var region = '안동시';
 
-
-window.addEventListener('load', ()=> {
-    printCurrentTime();
-    printCurrentDate();
-    getTodayWeather();
-    getTodayDust();
-});
-
 function printCurrentTime() {
     console.log("printCur");
     let currentDate =new Date();
     let divClock = document.querySelector('.date-time-box');
-    let hour = currentDate.getHours();
+    let hour = underTenAdapter(currentDate.getHours());
     let min = underTenAdapter(currentDate.getMinutes());
     let time_msg = hour + ":" + min;
 

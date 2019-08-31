@@ -1,6 +1,12 @@
 let dummy = [];
 let address = "아파트";
 
+let noise_color = { // 0~150 회색, 151 ~ 500  노란색, 500 ~ 빨강
+    "low" : "gray",
+    "mid" : "#FFC988",
+    "high" : "#CC0A0A"
+};
+
 function makeDummy() {
     let i = 0;
     while(i < 20){
@@ -54,6 +60,7 @@ function createHouseItem(item) {
 
     houseItem.classList.add("house-item");
     noise_color.classList.add("noise-color");
+    setNoiseColor(noise_color, item.vibration);
 
     houseItem.appendChild(noise_color);
     houseItem.appendChild(createRoomBox(item));
@@ -85,6 +92,15 @@ function createRoomBox(item) {
     }
 
     return room_number_box;
+}
+
+function setNoiseColor(target, vibe) {
+    if(vibe < 151)
+        target.style.background = noise_color["low"];
+    else if(vibe < 500)
+        target.style.background = noise_color["mid"];
+    else
+        target.style.background = noise_color["high"];
 }
 
 function roomClickHandler(e) {

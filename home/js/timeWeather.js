@@ -37,7 +37,7 @@ function printCurrentDate() {
     let day = underTenAdapter(currentDate.getDate());
     let divDate = document.querySelector('.date-box');
 
-    divDate.innerText = year + "." + month + "." + day;
+    divDate.innerText = year + ". " + month + ". " + day;
 }
 
 function getTodayWeather() {
@@ -56,7 +56,7 @@ function getTodayWeather() {
             let weather_img = document.querySelector('.weather-icon');
             let weather_en = response['weather'][0]['description'];
             let weather_icon_url = "http://openweathermap.org/img/w/" + response['weather'][0]['icon'] + ".png";
-            weather_result.innerHTML = weather_kn[weather_en];
+            // weather_result.innerHTML = weather_kn[weather_en];
             weather_img.setAttribute("src", weather_icon_url);
         });
 }

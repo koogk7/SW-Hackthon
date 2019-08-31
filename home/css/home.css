@@ -111,8 +111,8 @@
 }
 
 .room-number-box {
-    width: 2.5em;
-    padding-bottom: 0.5em;
+    width: 3.5em;
+    padding-bottom: 1.0em;
     display: inline-block;
 }
 
@@ -121,9 +121,37 @@
 }
 
 .room-noti{
-    display: inline-block;
-    vertical-align: top;
+    width: 1em;
+    height: 1em;
+    float: right;
 }
 
+.modal-dialog {
+    padding-top: 20em;
+    text-align: center;
+}
 
+.modal-body {
+    height: 5em;
+    font-size: 2em;
+}
+
+.modal-title {
+    font-size: 3em;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-header:before{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    bottom: 0;
+    left: 10%;
+    top: 38%;
+    border-bottom: 2px solid crimson;
+}
 
